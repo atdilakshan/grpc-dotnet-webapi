@@ -20,11 +20,11 @@ namespace Client.Services
         {
             try
             {
-                _logger.LogInformation($"Client: Start: GetBooks method called! {DateTime.UtcNow}");
+                _logger.LogInformation($"Client: Start: GetBooks method called! {DateTime.UtcNow:hh.mm.ss.ffffff}");
                 var request = new Empty();
 
                 var response = await _client.GetBooksAsync(request);
-                _logger.LogInformation($"Client: Finish: GetBooks method finished! {DateTime.UtcNow}");
+                _logger.LogInformation($"Client: Finish: GetBooks method finished! {DateTime.UtcNow:hh.mm.ss.ffffff}");
                 return response;
             }
             catch (Exception ex)

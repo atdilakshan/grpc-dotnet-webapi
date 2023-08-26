@@ -16,12 +16,12 @@ namespace Server.GrpcServices
         {
             try
             {
-                _logger.LogInformation($"Server: Start: GetBooks method called! {DateTime.UtcNow}");
+                _logger.LogInformation($"Server: Start: GetBooks method called! {DateTime.UtcNow:hh.mm.ss.ffffff}");
 
                 var books = new[]
                 {
                 new Book { Title = "Book 1", Author = "Author 1" },
-                new Book { Title = "Book 2", Author = "Author 2" }
+                new Book { Title = "Book 2", Author = "Author 2" },
             };
 
                 var bookList = new BookList();
@@ -29,7 +29,7 @@ namespace Server.GrpcServices
 
                 var response = await Task.FromResult(bookList);
 
-                _logger.LogInformation($"Server: Finish: GetBooks method finished! {DateTime.UtcNow}");
+                _logger.LogInformation($"Server: Finish: GetBooks method finished! {DateTime.UtcNow:hh.mm.ss.ffffff}");
                 return response;
             }
             catch (Exception ex)
