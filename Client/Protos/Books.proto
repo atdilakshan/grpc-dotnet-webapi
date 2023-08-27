@@ -4,6 +4,7 @@ option csharp_namespace = "Client.Protos";
 
 service BookGrpcService {
     rpc GetBooks(Empty) returns (BookList);
+    rpc GetBooksAsString(Empty) returns (BookListAsString);
 }
 
 message Book {
@@ -16,3 +17,7 @@ message BookList {
 }
 
 message Empty {}
+
+message BookListAsString{
+    string data = 1;
+}

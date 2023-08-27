@@ -20,5 +20,12 @@ namespace Client.Controllers
             var books = await _bookService.GetBooksAsync();
             return Ok(books);
         }
+
+        [HttpGet("GetAsString")]
+        public async Task<IActionResult> GetAsString()
+        {
+            var books = await _bookService.GetBooksAsyncAsString();
+            return Ok(books);
+        }
     }
 }
